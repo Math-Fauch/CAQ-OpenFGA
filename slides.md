@@ -192,7 +192,7 @@ function can_read(user: string, document: string) {
 
 <div class="comparison-label">OpenFGA</div>
 
-```yaml {all}
+```yaml
 model
   schema 1.1
 
@@ -230,7 +230,7 @@ layoutClass: comparison-slide
 
 <div class="comparison-label">TypeScript</div>
 
-```ts {all|1|3-7|6|8-18|all}
+```ts {all|1|3-7|6|8-18|all|0|0|all}{at: 1}
 type Role = "admin" | "editor" | "viewer"
 
 type User = {
@@ -256,7 +256,7 @@ function canViewArticles(user: User) {
 
 <div class="comparison-label">OpenFGA</div>
 
-```yaml {all|6-10|16,17,23,24|all}
+```yaml {all|0|0|0|0|all|6-10|16,17,23,24|all}{at: 1}
 model
   schema 1.1
 
