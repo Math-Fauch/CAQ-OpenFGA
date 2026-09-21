@@ -19,6 +19,7 @@
   color: var(--ink);
   font-family: Inter, ui-sans-serif, system-ui, sans-serif;
   padding: 2.7rem 3.5rem;
+  position: relative;
 }
 
 .slidev-layout h1 {
@@ -45,8 +46,20 @@
   font-family: 'IBM Plex Mono', ui-monospace, monospace;
   font-size: 0.68rem;
   font-weight: 600;
+  left: 3.5rem;
   letter-spacing: 0.15em;
+  position: absolute;
   text-transform: uppercase;
+  top: 2.7rem;
+  z-index: 1;
+}
+
+.two-cols-header .col-header {
+  padding-top: 1.15rem;
+}
+
+.slidev-layout.default {
+  padding-top: 4rem;
 }
 
 .lede {
@@ -584,11 +597,45 @@
   font: 0.72rem 'IBM Plex Mono', monospace;
 }
 
-.final-question {
-  bottom: 2.4rem;
-  color: var(--muted);
+.final-slide {
+  text-align: center;
+}
+
+.final-slide h1 {
+  font-size: 3.2rem;
+  margin: 0.9rem 0 1.7rem;
+}
+
+.resources {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin: 0 auto;
+  text-align: left;
+  width: 27rem;
+}
+
+.resources a {
+  align-items: center;
+  background: var(--panel);
+  border: 1px solid var(--line) !important;
+  border-radius: 0.65rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.7rem 0.85rem;
+}
+
+.resources b {
+  color: var(--ink);
   font-size: 0.72rem;
-  left: 0;
-  position: absolute;
-  right: 0;
+  font-weight: 500;
+}
+
+.resources span {
+  color: var(--muted);
+  font: 0.58rem 'IBM Plex Mono', monospace;
+}
+
+.resources a:hover {
+  border-color: var(--purple) !important;
 }

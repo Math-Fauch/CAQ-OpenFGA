@@ -296,7 +296,7 @@ layoutClass: comparison-slide
 
 <div class="comparison-label">TypeScript</div>
 
-``` ts {all|1-6|7-10|11-23|all}
+```ts {all|1-6|7-10|11-23|all|0|0|all} {at: 1}
 type Grant = {
   user: string
   document: string
@@ -326,7 +326,7 @@ function can(user: string, relation: "editor" | "viewer", document: string) {
 
 <div class="comparison-label">OpenFGA</div>
 
-```yaml {all|16-18|10-14|all}
+```yaml {all|0|0|0|all|16-22|10-14|all} {at: 1}
 model
   schema 1.1
 
@@ -342,7 +342,11 @@ type document
     define editor: [user with non_expired_grant]
     define viewer: [user with non_expired_grant]
 
-condition non_expired_grant(current_time: timestamp, grant_time: timestamp, grant_duration: duration) {
+condition non_expired_grant(
+  current_time: timestamp,
+  grant_time: timestamp,
+  grant_duration: duration
+  ) {
   current_time < grant_time + grant_duration
 }
 ```
@@ -357,19 +361,24 @@ condition non_expired_grant(current_time: timestamp, grant_time: timestamp, gran
 
 ---
 layout: center
-class: takeaway-slide
+class: final-slide
 ---
 
-<div class="eyebrow">EN RÉSUMÉ</div>
+<div class="eyebrow">09 · FIN</div>
 
-# Modélisez les relations.<br><span>Vérifiez les autorisations.</span>
+# Des questions ?
 
-<div class="takeaways">
-  <div><b>01</b><span>Politique centralisée</span></div>
-  <div><b>02</b><span>Relations composables</span></div>
-  <div><b>03</b><span>Décisions explicables</span></div>
+<div class="resources">
+  <a href="https://blog.webdevsimplified.com/2025-11/rbac-vs-abac-vs-rebac/" target="_blank">
+    <b>RBAC, ABAC et ReBAC</b>
+    <span>blog.webdevsimplified.com ↗</span>
+  </a>
+  <a href="https://openfga.dev/docs/fga" target="_blank">
+    <b>Le langage de modélisation</b>
+    <span>openfga.dev/docs/fga ↗</span>
+  </a>
+  <a href="https://openfga.dev/docs/best-practices" target="_blank">
+    <b>Bonnes pratiques OpenFGA</b>
+    <span>openfga.dev/docs/best-practices ↗</span>
+  </a>
 </div>
-
-<a href="https://openfga.dev" target="_blank" class="final-link">openfga.dev ↗</a>
-
-<div class="final-question">Des questions ?</div>
