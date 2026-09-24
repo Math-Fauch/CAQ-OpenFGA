@@ -18,6 +18,10 @@ drawings:
 
 <p class="lede">Modélisez des relations. Posez une seule question.<br>Gardez les politiques hors du code applicatif.</p>
 
+<!--
+test
+-->
+
 ---
 layout: two-cols-header
 ---
@@ -37,11 +41,21 @@ layout: two-cols-header
 <img src="/BP_Brandmark_Black.png" alt="Botpress" style="width: 12rem" />
 
 ---
+
+<div class="eyebrow">01 · OPENFGA</div>
+
+- FGA -> Fine-Grained Authorization
+- ReBAC -> Relation-based Access Credentials
+- Projet open-source
+- Modèle facile à lire
+- Inspiré du document de recherche Zanzibar de Google
+
+---
 layout: two-cols-header
 layoutClass: concrete-example
 ---
 
-<div class="eyebrow">01 · LE PROBLEME</div>
+<div class="eyebrow">02 · LE PROBLEME</div>
 
 # Exemple concret
 
@@ -76,7 +90,7 @@ layout: center
 layoutClass: paths-slide
 ---
 
-<div class="eyebrow">02 · Les chemins</div>
+<div class="eyebrow">03 · Les chemins</div>
 
 <div class="paths-diagram">
   <svg viewBox="0 0 640 300" role="img" aria-label="Trois chemins entre Alice et le document roadmap">
@@ -115,7 +129,7 @@ layoutClass: paths-slide
 layout: two-cols-header
 ---
 
-<div class="eyebrow">03 · Le model</div>
+<div class="eyebrow">04 · Le model</div>
 
 ::left::
 
@@ -165,7 +179,7 @@ type document
 
 ---
 
-<div class="eyebrow">04 · Modèles</div>
+<div class="eyebrow">05 · Modèles</div>
 
 - ACL (Access Control List)
 - RBAC (Role-Based Access Control)
@@ -176,7 +190,7 @@ layout: two-cols-header
 layoutClass: comparison-slide
 ---
 
-<div class="eyebrow">05 · ACL</div>
+<div class="eyebrow">06 · ACL</div>
 
 ::left::
 
@@ -224,7 +238,7 @@ layout: two-cols-header
 layoutClass: comparison-slide
 ---
 
-<div class="eyebrow">06 · RBAC</div>
+<div class="eyebrow">07 · RBAC</div>
 
 ::left::
 
@@ -280,7 +294,7 @@ type document
     define owner: [user]
     define folder: [folder]
     define editor: [user, team#editor, team#admin] or owner or editor from parent
-    define viewer: [user, team#viewer, team#admin] or editor or viewer from parent
+    define viewer: [user:*]
 ```
 
 ---
@@ -288,9 +302,7 @@ layout: two-cols-header
 layoutClass: comparison-slide
 ---
 
-<div class="eyebrow">07 · ABAC</div>
-
-# Make the Playground earn its screen time.
+<div class="eyebrow">08 · ABAC</div>
 
 ::left::
 
@@ -304,8 +316,8 @@ type Grant = {
   expiresAt: number
 }
 const GRANTS: Grant[] = [
-  { user: "alice", document: "roadmap", relation: "viewer", expiresAt: 1700000000 },
-  { user: "bob", document: "roadmap", relation: "editor", expiresAt: 1700000000 },
+  { user: "George", document: "roadmap", relation: "viewer", expiresAt: 1000213380 },
+  { user: "Ben", document: "roadmap", relation: "editor", expiresAt: 1000214880 },
 ]
 function can(user: string, relation: "editor" | "viewer", document: string) {
   for (const grant of GRANTS) {
@@ -353,7 +365,7 @@ condition non_expired_grant(
 
 ---
 
-<div class="eyebrow">08 · Trucs</div>
+<div class="eyebrow">09 · Trucs</div>
 
 - Toujours garder une seule source de vérité
 - Ajouter un type role pour faire des role personnalisés
@@ -364,7 +376,7 @@ layout: center
 class: final-slide
 ---
 
-<div class="eyebrow">09 · FIN</div>
+<div class="eyebrow">10 · FIN</div>
 
 # Des questions ?
 
